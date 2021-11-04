@@ -1,4 +1,3 @@
-
 module "s3-bucket" {
   source = "git::https://github.com/ministryofjustice/modernisation-platform-terraform-s3-bucket?ref=v4.0.0"
 
