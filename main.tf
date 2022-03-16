@@ -1,5 +1,5 @@
 module "s3-bucket" {
-  source = "git::https://github.com/ministryofjustice/modernisation-platform-terraform-s3-bucket?ref=v4.0.0"
+  source = "github.com/ministryofjustice/modernisation-platform-terraform-s3-bucket?ref=v6.0.3"
 
   providers = {
     aws.bucket-replication = aws.bucket-replication
@@ -10,7 +10,7 @@ module "s3-bucket" {
   lifecycle_rule = [
     {
       id      = "main"
-      enabled = true
+      enabled = "Enabled"
       prefix  = ""
 
       tags = {
