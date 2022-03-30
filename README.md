@@ -22,19 +22,19 @@ module "vm-import" {
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0.1 |
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 3.47.0 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 4.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 3.47.0 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | ~> 4.0 |
 
 ## Modules
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_s3-bucket"></a> [s3-bucket](#module\_s3-bucket) | git::https://github.com/ministryofjustice/modernisation-platform-terraform-s3-bucket | v4.0.0 |
+| <a name="module_s3-bucket"></a> [s3-bucket](#module\_s3-bucket) | github.com/ministryofjustice/modernisation-platform-terraform-s3-bucket | v6.0.3 |
 
 ## Resources
 
