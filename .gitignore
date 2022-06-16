@@ -1,3 +1,11 @@
 .env
-.terraform/*
-.idea
+.terraform
+*.tfstate*
+.DS_Store
+tmp/
+.vscode/
+.terraform.lock.hcl
+*.tsv
+.idea/
+.tfsec/
+.tfsec/*

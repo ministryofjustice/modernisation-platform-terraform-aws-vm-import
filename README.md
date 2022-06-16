@@ -34,7 +34,7 @@ module "vm-import" {
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_s3-bucket"></a> [s3-bucket](#module\_s3-bucket) | github.com/ministryofjustice/modernisation-platform-terraform-s3-bucket | v6.0.3 |
+| <a name="module_s3-bucket"></a> [s3-bucket](#module\_s3-bucket) | github.com/ministryofjustice/modernisation-platform-terraform-s3-bucket | v6.1.0 |
 
 ## Resources
 
@@ -56,7 +56,10 @@ module "vm-import" {
 
 ## Outputs
 
-No outputs.
+| Name | Description |
+|------|-------------|
+| <a name="output_policy"></a> [policy](#output\_policy) | IAM policy name output |
+| <a name="output_role"></a> [role](#output\_role) | IAM role name output |
 
 <!--- END_TF_DOCS --->
 

@@ -1,5 +1,5 @@
 module "s3-bucket" {
-  source = "github.com/ministryofjustice/modernisation-platform-terraform-s3-bucket?ref=v6.0.3"
+  source = "github.com/ministryofjustice/modernisation-platform-terraform-s3-bucket?ref=v6.1.0"
 
   providers = {
     aws.bucket-replication = aws.bucket-replication
@@ -80,7 +80,7 @@ data "aws_iam_policy_document" "vmimport-trust-policy" {
 }
 
 resource "aws_iam_policy" "vmimport-policy" {
-  name   = "${var.application_name}-vmimport-policy"
+  name   = "vmimport-policy-${var.application_name}"
   policy = <<EOF
 {
   "Version":"2012-10-17",
