@@ -80,7 +80,7 @@ data "aws_iam_policy_document" "vmimport-trust-policy" {
 }
 
 resource "aws_iam_policy" "vmimport-policy" {
-  name   = "${var.application_name}-vmimport-policy"
+  name   = "vmimport-policy-${var.application_name}"
   policy = <<EOF
 {
   "Version":"2012-10-17",

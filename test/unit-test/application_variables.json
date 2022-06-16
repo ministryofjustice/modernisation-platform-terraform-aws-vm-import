@@ -1,0 +1,7 @@
+{
+  "accounts": {
+    "test": {
+      "bucket_prefix": "vm-import-s3-bucket"
+    }
+  }
+}
