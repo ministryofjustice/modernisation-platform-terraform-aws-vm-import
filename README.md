@@ -56,7 +56,10 @@ module "vm-import" {
 
 ## Outputs
 
-No outputs.
+| Name | Description |
+|------|-------------|
+| <a name="output_policy"></a> [policy](#output\_policy) | IAM policy name output |
+| <a name="output_role"></a> [role](#output\_role) | IAM role name output |
 
 <!--- END_TF_DOCS --->
 
