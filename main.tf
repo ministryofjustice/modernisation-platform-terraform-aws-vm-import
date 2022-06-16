@@ -1,5 +1,5 @@
 module "s3-bucket" {
-  source = "github.com/ministryofjustice/modernisation-platform-terraform-s3-bucket?ref=v6.0.3"
+  source = "github.com/ministryofjustice/modernisation-platform-terraform-s3-bucket?ref=v6.1.0"
 
   providers = {
     aws.bucket-replication = aws.bucket-replication
