@@ -12,7 +12,7 @@ Run the tests from within the `test` directory
 
 ```
 cd ../
-go mod init github.com/ministryofjustice/modernisation-platform-terraform-bastion-linux
+go mod init github.com/ministryofjustice/modernisation-platform-terraform-aws-vm-import
 go mod tidy
 go mod download
 aws-vault exec mod -- go test -v
@@ -25,7 +25,7 @@ TestS3Creation 2022-06-08T14:29:22+01:00 logger.go:66: Destroy complete! Resourc
 TestS3Creation 2022-06-08T14:29:22+01:00 logger.go:66:
 --- PASS: TestS3Creation (20.60s)
 PASS
-ok      github.com/ministryofjustice/modernisation-platform-terraform-bastion-linux        20.897s
+ok      github.com/ministryofjustice/modernisation-platform-terraform-aws-vm-import        20.897s
 ```
 
 ## References

@@ -23,5 +23,5 @@ func TestS3Creation(t *testing.T) {
 	policyName := terraform.Output(t, terraformOptions, "policy_name")
 
 	assert.Regexp(t, regexp.MustCompile(`^vmimport*`), roleName)
-	assert.Regexp(t, regexp.MustCompile(`^vmimport-policy-*`), policyName)
+	assert.Regexp(t, regexp.MustCompile(`^vmimport-policy*`), policyName)
 }
