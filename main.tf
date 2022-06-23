@@ -79,6 +79,7 @@ data "aws_iam_policy_document" "vmimport-trust-policy" {
   }
 }
 
+#tfsec:ignore:aws-iam-no-policy-wildcards
 resource "aws_iam_policy" "vmimport-policy" {
   name   = "vmimport-policy-${var.application_name}"
   policy = <<EOF
