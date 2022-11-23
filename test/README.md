@@ -4,8 +4,7 @@ Initialise terraform workspace within the `test/unit-test` directory
 
 ```
 cd test/unit-test
-aws-vault exec mod -- terraform init
-aws-vault exec mod -- terraform workspace select testing-test
+aws-vault exec $your-mp-profile -- terraform init
 ```
 
 Run the tests from within the `test` directory
