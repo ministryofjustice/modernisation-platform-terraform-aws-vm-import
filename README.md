@@ -85,7 +85,7 @@ If you're looking to raise an issue with this module, please create a new issue 
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_s3-bucket"></a> [s3-bucket](#module\_s3-bucket) | github.com/ministryofjustice/modernisation-platform-terraform-s3-bucket | v6.2.0 |
+| <a name="module_s3-bucket"></a> [s3-bucket](#module\_s3-bucket) | github.com/ministryofjustice/modernisation-platform-terraform-s3-bucket | v6.4.0 |
 
 ## Resources
 
