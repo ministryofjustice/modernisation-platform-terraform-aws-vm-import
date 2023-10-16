@@ -1,5 +1,5 @@
 module "s3-bucket" {
-  source = "github.com/ministryofjustice/modernisation-platform-terraform-s3-bucket?ref=v7.0.0"
+  source = "github.com/ministryofjustice/modernisation-platform-terraform-s3-bucket?ref=8688bc15a08fbf5a4f4eef9b7433c5a417df8df1"
 
   providers = {
     aws.bucket-replication = aws.bucket-replication
@@ -81,6 +81,9 @@ data "aws_iam_policy_document" "vmimport-trust-policy" {
 
 #tfsec:ignore:aws-iam-no-policy-wildcards
 resource "aws_iam_policy" "vmimport-policy" {
+#checkov:skip=CKV_AWS_289: "Wildcard used as this is a consumable module"
+#checkov:skip=CKV_AWS_290: "Wildcard used as this is a consumable module"
+#checkov:skip=CKV_AWS_355: "ec2:Describe* achieves same goal as allowing all describe actions"
   name   = "vmimport-policy-${var.application_name}"
   policy = <<EOF
 {
