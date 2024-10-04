@@ -14,3 +14,9 @@ variable "application_name" {
   type        = string
   description = "Name of application"
 }
+
+variable "region" {
+  description = "The AWS region where resources will be created"
+  type        = string
+  default     = "eu-west-2"
+}
