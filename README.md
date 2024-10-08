@@ -103,6 +103,7 @@ If you're looking to raise an issue with this module, please create a new issue 
 | <a name="input_account_number"></a> [account\_number](#input\_account\_number) | Account number of current environment | `string` | n/a | yes |
 | <a name="input_application_name"></a> [application\_name](#input\_application\_name) | Name of application | `string` | n/a | yes |
 | <a name="input_bucket_prefix"></a> [bucket\_prefix](#input\_bucket\_prefix) | Prefix for s3 bucket | `string` | n/a | yes |
+| <a name="input_region"></a> [region](#input\_region) | The AWS region where resources will be created | `string` | `"eu-west-2"` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | Common tags to be used by all resources | `map(string)` | n/a | yes |
 
 ## Outputs
