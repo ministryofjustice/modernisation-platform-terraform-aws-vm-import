@@ -2,6 +2,10 @@ module "vm-import" {
 
   source = "../../"
 
+  providers = {
+    aws.bucket-replication = aws
+  }
+
   bucket_prefix    = local.application_data.accounts["test"].bucket_prefix
   tags             = local.tags
   application_name = local.application_name
