@@ -1,11 +1,74 @@
+data "aws_iam_policy_document" "kms_policy" {
+  statement {
+    sid    = "EnableRootAccountAccess"
+    effect = "Allow"
+    principals {
+      type        = "AWS"
+      identifiers = ["arn:aws:iam::${var.account_number}:root"]
+    }
+    actions   = ["kms:*"]
+    resources = ["*"]
+  }
+
+  statement {
+    sid    = "AllowVMImportUseOfKey"
+    effect = "Allow"
+    principals {
+      type        = "Service"
+      identifiers = ["vmie.amazonaws.com"]
+    }
+    actions = [
+      "kms:Decrypt",
+      "kms:DescribeKey",
+      "kms:GenerateDataKey",
+    ]
+    resources = ["*"]
+  }
+
+  statement {
+    sid    = "AllowS3UseOfKey"
+    effect = "Allow"
+    principals {
+      type        = "Service"
+      identifiers = ["s3.amazonaws.com"]
+    }
+    actions = [
+      "kms:Decrypt",
+      "kms:DescribeKey",
+      "kms:GenerateDataKey",
+    ]
+    resources = ["*"]
+  }
+}
+
+resource "aws_kms_key" "s3" {
+  description             = "KMS key for ${var.application_name} VM import S3 bucket"
+  deletion_window_in_days = 7
+  enable_key_rotation     = true
+  policy                  = data.aws_iam_policy_document.kms_policy.json
+
+  tags = merge(
+    var.tags,
+    {
+      Name = "${var.application_name}-vm-import-s3-key"
+    }
+  )
+}
+
+resource "aws_kms_alias" "s3" {
+  name          = "alias/${var.application_name}-vm-import-s3"
+  target_key_id = aws_kms_key.s3.key_id
+}
+
 module "s3-bucket" {
-  source = "github.com/ministryofjustice/modernisation-platform-terraform-s3-bucket?ref=9facf9fc8f8b8e3f93ffbda822028534b9a75399" # v9.0.0
+  source = "github.com/ministryofjustice/modernisation-platform-terraform-s3-bucket?ref=76321e50b20f5c0d918cd45bdcf0b62049f5baf1" # v10.1.0
 
   providers = {
     aws.bucket-replication = aws.bucket-replication
   }
   bucket_prefix       = var.bucket_prefix
   replication_enabled = false
+  custom_kms_key      = aws_kms_key.s3.arn
 
   lifecycle_rule = [
     {
@@ -112,6 +175,15 @@ resource "aws_iam_policy" "vmimport-policy" {
             "ec2:Describe*"
          ],
          "Resource": "*"
+      },
+      {
+         "Effect": "Allow",
+         "Action": [
+            "kms:Decrypt",
+            "kms:DescribeKey",
+            "kms:GenerateDataKey"
+         ],
+         "Resource": "${aws_kms_key.s3.arn}"
       }
    ]
 }
