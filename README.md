@@ -92,7 +92,7 @@ If you're looking to raise an issue with this module, please create a new issue 
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_s3-bucket"></a> [s3-bucket](#module\_s3-bucket) | github.com/ministryofjustice/modernisation-platform-terraform-s3-bucket | 9facf9fc8f8b8e3f93ffbda822028534b9a75399 |
+| <a name="module_s3-bucket"></a> [s3-bucket](#module\_s3-bucket) | github.com/ministryofjustice/modernisation-platform-terraform-s3-bucket | 76321e50b20f5c0d918cd45bdcf0b62049f5baf1 |
 
 ## Resources
 
@@ -101,6 +101,9 @@ If you're looking to raise an issue with this module, please create a new issue 
 | [aws_iam_policy.vmimport-policy](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_policy) | resource |
 | [aws_iam_role.vmimport](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role) | resource |
 | [aws_iam_role_policy_attachment.vmimport_policy_attachment](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/iam_role_policy_attachment) | resource |
+| [aws_kms_alias.s3](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/kms_alias) | resource |
+| [aws_kms_key.s3](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/kms_key) | resource |
+| [aws_iam_policy_document.kms_policy](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document) | data source |
 | [aws_iam_policy_document.vmimport-trust-policy](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/iam_policy_document) | data source |
 
 ## Inputs
@@ -117,6 +120,8 @@ If you're looking to raise an issue with this module, please create a new issue 
 
 | Name | Description |
 |------|-------------|
+| <a name="output_kms_alias"></a> [kms\_alias](#output\_kms\_alias) | KMS alias for the VM import S3 bucket encryption key |
+| <a name="output_kms_key"></a> [kms\_key](#output\_kms\_key) | KMS key used to encrypt the VM import S3 bucket |
 | <a name="output_policy"></a> [policy](#output\_policy) | IAM policy name output |
 | <a name="output_role"></a> [role](#output\_role) | IAM role name output |
 <!-- END_TF_DOCS -->
